@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+  "browser_action": {
+    "default_popup": "./popup.html"
+  },
+  "content_scripts": [
+    {
+      "css": ["./youtube-content.css"],
+      "js": ["./youtube-content.js"],
+      "matches": ["*://*.youtube.com/*"],
+      "run_at": "document_start"
+    }
+  ],
+  "permissions": ["activeTab", "storage"]
+}
