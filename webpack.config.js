@@ -273,7 +273,6 @@ module.exports = {
     }),
     new GenerateJsonPlugin('manifest.json', {
       ...manifestJson,
-      name: packageJson.name,
       description: packageJson.description,
       version: packageJson.version,
     }),
