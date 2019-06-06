@@ -23,3 +23,7 @@ Builds the app for development to the `build` folder. Will watch the files for c
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.
+
+### `npm run coverage`
+
+Displays coverage data in the terminal and also saves it in the `coverage` folder.
