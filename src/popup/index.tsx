@@ -3,6 +3,6 @@ import ReactDOM from 'react-dom';
 
 import './style.scss';
 
-import Popup from './components/Popup/Popup';
+import App from './App';
 
-ReactDOM.render(<Popup />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));

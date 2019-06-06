@@ -1,3 +1,8 @@
+import { getChannels } from '../services/browser';
+
 import './style.scss';
 
-console.log('YouTube content');
+(async () => {
+  const channels = await getChannels();
+  console.log('Channels', channels);
+})();
