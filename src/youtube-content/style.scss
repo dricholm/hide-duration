@@ -1,0 +1,21 @@
+$prefix: 'hd';
+
+.#{$prefix}-thumbnail-progress {
+  ytd-thumbnail-overlay-resume-playback-renderer {
+    display: none !important;
+  }
+}
+
+.#{$prefix}-thumbnail-duration {
+  ytd-thumbnail-overlay-time-status-renderer {
+    display: none !important;
+  }
+}
+
+.#{$prefix}-player {
+  .ytp-progress-bar-container,
+  .ytp-time-separator,
+  .ytp-time-duration {
+    display: none;
+  }
+}
