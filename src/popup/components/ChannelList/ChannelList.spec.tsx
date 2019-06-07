@@ -14,8 +14,7 @@ describe('ChannelList', () => {
     );
 
     utils.getByText('No channels have been added');
-    const list = utils.queryByRole('list');
-    expect(list).toBeNull();
+    expect(utils.container.querySelector('ul')).toBeNull();
   });
 
   it('should render a sorted list', () => {
@@ -34,7 +33,7 @@ describe('ChannelList', () => {
 
     const alert = utils.queryByText('No channels have been added');
     expect(alert).toBeNull();
-    const listItems = utils.getAllByRole('listitem');
+    const listItems = utils.container.querySelectorAll('li');
     expect(listItems.length).toBe(channels.length);
     expect(listItems[0].textContent).toContain(channels[4].name);
     expect(listItems[1].textContent).toContain(channels[3].name);
@@ -55,7 +54,7 @@ describe('ChannelList', () => {
       <ChannelList onRemove={onRemove} channels={channels} />
     );
 
-    const buttons = utils.getAllByRole('button');
+    const buttons = utils.getAllByLabelText('Remove');
     expect(buttons.length).toBe(channels.length);
     fireEvent.click(buttons[1]);
     expect(onRemove).toHaveBeenCalledWith(channels[1]);

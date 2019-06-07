@@ -24,7 +24,7 @@ const ChannelForm: React.FC<ChannelFormProps> = ({ onSubmit, usedValues }) => {
   };
 
   return (
-    <form onSubmit={submit} className="form-inline" role="form">
+    <form onSubmit={submit} className="form-inline">
       <div className="input-group">
         <input
           type="text"
@@ -37,7 +37,7 @@ const ChannelForm: React.FC<ChannelFormProps> = ({ onSubmit, usedValues }) => {
           required
         />
         <div className="input-group-append">
-          <button className="btn btn-primary" type="submit" role="button">
+          <button className="btn btn-primary" type="submit">
             Add
           </button>
         </div>

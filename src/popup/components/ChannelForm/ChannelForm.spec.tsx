@@ -13,7 +13,7 @@ describe('ChannelForm', () => {
     fireEvent.change(input, { target: { value } });
     expect(input.value).toBe(value);
 
-    fireEvent.click(utils.getByRole('button'));
+    fireEvent.click(utils.getByText('Add'));
     expect(onSubmit).toHaveBeenCalledWith(value);
     expect(input.value).toBe('');
     expect(utils.queryByRole('alert')).toBeNull();
@@ -30,7 +30,7 @@ describe('ChannelForm', () => {
     fireEvent.change(input, { target: { value } });
     expect(input.value).toBe(value);
 
-    fireEvent.click(utils.getByRole('button'));
+    fireEvent.click(utils.getByText('Add'));
     expect(onSubmit).not.toHaveBeenCalled();
     expect(input.value).toBe(value);
     utils.getByRole('alert');

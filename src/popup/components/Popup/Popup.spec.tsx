@@ -16,7 +16,7 @@ describe('Popup', () => {
     utils.getByText(/Loading/);
     expect(utils.queryByLabelText('Channel name')).toBeNull();
     expect(utils.queryByText('No channels have been added')).toBeNull();
-    expect(utils.queryByRole('list')).toBeNull();
+    expect(utils.container.querySelector('ul')).toBeNull();
   });
 
   it('it should fetch data from browser API', async () => {
@@ -37,7 +37,7 @@ describe('Popup', () => {
       utils.getByLabelText('Channel name')
     );
     fireEvent.change(input, { target: { value } });
-    fireEvent.click(utils.getByRole('button'));
+    fireEvent.click(utils.getByText('Add'));
 
     expect(browser.storage.sync.set).toHaveBeenCalledWith({
       channels: [{ name: value }],
@@ -52,9 +52,9 @@ describe('Popup', () => {
     const utils = render(<Popup />);
 
     await waitForElement(() => utils.getByText('Mock value'));
-    const buttons = utils.getAllByRole('button');
+    const removeButton = utils.getByLabelText('Remove');
 
-    fireEvent.click(buttons[1]);
+    fireEvent.click(removeButton);
 
     expect(browser.storage.sync.set).toHaveBeenCalledWith({
       channels: [],

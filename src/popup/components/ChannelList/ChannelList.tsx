@@ -27,19 +27,17 @@ const ChannelList: React.FC<ChannelListProps> = ({ channels, onRemove }) => {
   });
 
   return (
-    <ul className="list-group" role="list">
+    <ul className="list-group">
       {sortedChannels.map(channel => (
         <li
           className="list-group-item d-flex justify-content-between"
           key={channel.name}
-          role="listitem"
         >
           {channel.name}
           <button
             type="button"
             className="close"
             aria-label="Remove"
-            role="button"
             onClick={() => onRemove(channel)}
           >
             <span aria-hidden="true">&times;</span>
